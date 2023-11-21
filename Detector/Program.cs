@@ -49,6 +49,7 @@ app.MapPost("/predict",
         var response = new
         {
             PredictedLabel = result.PredictedLabel,
+            Score = result.Score
         };
 
 
