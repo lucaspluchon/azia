@@ -14,6 +14,8 @@ builder.Services.AddPredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutp
     .FromFile("MLModel1.mlnet");
 
 builder.Services.AddEndpointsApiExplorer();
+builder.WebHost.UseUrls("http://*:80");
+
 
 builder.Services.AddSwaggerGen(c =>
 {
