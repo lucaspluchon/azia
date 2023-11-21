@@ -41,9 +41,16 @@ app.MapPost("/predict",
         {
             ImageSource = fileBytes,
         };
+        
+        var result = predictionEnginePool.Predict(input);
+
+        var response = new
+        {
+            PredictedLabel = result.PredictedLabel,
+        };
 
 
-        return await Task.FromResult(predictionEnginePool.Predict(input));
+        return await Task.FromResult(response);
     });
 
 // Run app
